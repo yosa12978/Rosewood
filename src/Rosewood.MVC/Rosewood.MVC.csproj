@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <ProjectReference Include="..\Rosewood.Services\Rosewood.Services.csproj" />
+    <ProjectReference Include="..\Rosewood.Efcore\Rosewood.Efcore.csproj" />
+    <ProjectReference Include="..\Rosewood.Dtos\Rosewood.Dtos.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+</Project>

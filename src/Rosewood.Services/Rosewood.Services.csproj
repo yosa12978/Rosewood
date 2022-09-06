@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Rosewood.Efcore\Rosewood.Efcore.csproj" />
+    <ProjectReference Include="..\Rosewood.Dtos\Rosewood.Dtos.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Automapper" Version="11.0.1" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+</Project>
