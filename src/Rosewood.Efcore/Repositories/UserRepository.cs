@@ -22,6 +22,11 @@ public class UserRepository : IUserRepository
         await _db.SaveChangesAsync();
     }
 
+    public async Task<User> GetByEmail(string email) 
+    {
+        return await _db.users.FirstAsync(x => x.Email == email);
+    }
+
     public async Task<IEnumerable<User>> GetAll()
     {
         return await _db.users.OrderByDescending(x => x.RegDate).ToListAsync();

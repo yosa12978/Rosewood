@@ -26,6 +26,8 @@ public class IssueRepository : IIssueRepository
     public async Task<IEnumerable<Issue>> GetAll()
     {
         return await _db.issues
+        .Include(x => x.Project)
+        .Include(x => x.DiscoveredBy)
         .OrderByDescending(x => x.Date)
         .ToListAsync();
     }
@@ -33,12 +35,16 @@ public class IssueRepository : IIssueRepository
     public async Task<Issue> GetById(string Id)
     {
         return await _db.issues
+        .Include(x => x.Project)
+        .Include(x => x.DiscoveredBy)
         .FirstAsync(x => x.Id == Id);
     }
 
     public async Task<IEnumerable<Issue>> SearchByName(string name)
     {
         return await _db.issues
+        .Include(x => x.Project)
+        .Include(x => x.DiscoveredBy)
         .Where(x => x.Name.Contains(name))
         .OrderByDescending(x => x.Date)
         .ToListAsync();
@@ -53,5 +59,15 @@ public class IssueRepository : IIssueRepository
     public bool IsExists(string Id) 
     {
         return _db.issues.Any(x => x.Id == Id);
+    }
+
+    public async Task<IEnumerable<Issue>> GetIssuesByProjectId(string Id)
+    {
+        return await _db.issues
+        .Include(x => x.Project)
+        .Include(x => x.DiscoveredBy)
+        .Where(x => x.Project.Id == Id)
+        .OrderByDescending(x => x.Date)
+        .ToListAsync();
     }
 }

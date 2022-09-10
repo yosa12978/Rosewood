@@ -25,18 +25,22 @@ public class ProjectRepository : IProjectRepository
     public async Task<IEnumerable<Project>> GetAll()
     {
         return await _db.projects
+        .Include(x => x.CreatedBy)
         .OrderBy(x => x.Title)
         .ToListAsync();
     }
 
     public async Task<Project> GetById(string Id)
     {
-        return await _db.projects.FirstAsync(x => x.Id == Id);
+        return await _db.projects
+        .Include(x => x.CreatedBy)
+        .FirstAsync(x => x.Id == Id);
     }
 
     public async Task<IEnumerable<Project>> SearchByTitle(string title)
     {
         return await _db.projects
+        .Include(x => x.CreatedBy)
         .Where(x => x.Title.Contains(title))
         .OrderBy(x => x.Title)
         .ToListAsync();

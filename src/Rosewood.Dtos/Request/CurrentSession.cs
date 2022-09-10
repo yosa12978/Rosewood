@@ -1,7 +1,7 @@
 namespace Rosewood.Dtos.Request;
 
-public class LoginRequest
+public class CurrentSession
 {
     public string Email { get; set; } = default!;
-    public string Password { get; set; } = default!;
+    public string Role { get; set; } = default!;
 }
