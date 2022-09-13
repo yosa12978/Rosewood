@@ -20,4 +20,5 @@ public class User : BaseEntity
     public Issue[] Issues { get; set; } = default!;
     [Required]
     public DateTime RegDate { get; set; } = DateTime.Now;
+    public List<Comment> Comments { get; set; } = default!;
 }

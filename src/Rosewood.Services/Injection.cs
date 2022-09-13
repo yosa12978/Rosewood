@@ -12,6 +12,7 @@ public static class Injection
         services.AddSingleton<IUserService, UserService>();
         services.AddSingleton<IProjectService, ProjectService>();
         services.AddSingleton<IIssueService, IssueService>();
+        services.AddSingleton<ICommentService, CommentService>();
         return services;
     }
 }

@@ -11,9 +11,9 @@ public class Issue : BaseEntity
     public User DiscoveredBy { get; set; } = default!;
     [Required]
     public Project Project { get; set;} = default!;
-    public string[] Tags { get; set; } = default!;
     [Required]
     public bool Active { get; set; } = true;
     [Required]
     public DateTime Date { get; set; } = DateTime.Now;
+    public List<Comment> Comments { get; set; } = default!;
 }

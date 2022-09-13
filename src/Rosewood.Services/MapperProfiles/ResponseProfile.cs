@@ -7,5 +7,6 @@ public class ResponseProfile : Profile
         CreateMap<IssueResponse, Issue>();
         CreateMap<ProjectResponse, Project>();
         CreateMap<UserResponse, User>();
+        CreateMap<CommentResponse, Comment>();
     }
 }

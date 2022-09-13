@@ -49,7 +49,6 @@ public class IssueService : IIssueService
             Name = dto.Name,
             Description = dto.Description,
             Active = true,
-            Tags = dto.Tags,
             Project = await _projectService.GetProjectM(dto.ProjectID)
         };
         await _repo.Create(issue);

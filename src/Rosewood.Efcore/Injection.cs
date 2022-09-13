@@ -15,6 +15,7 @@ public static class Injection
         services.AddSingleton<IUserRepository, UserRepository>();
         services.AddSingleton<IProjectRepository, ProjectRepository>();
         services.AddSingleton<IIssueRepository, IssueRepository>();
+        services.AddSingleton<ICommentRepository, CommentRepository>();
         return services;
     }
 }

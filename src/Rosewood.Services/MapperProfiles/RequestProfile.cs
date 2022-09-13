@@ -11,5 +11,8 @@ public class RequestProfile : Profile
         CreateMap<CreateIssueRequest, Issue>();
 
         CreateMap<UserCreateRequest, User>();
+
+        CreateMap<CreateCommentRequest, Comment>();
+        CreateMap<UpdateCommentRequest, Comment>();
     }
 } 

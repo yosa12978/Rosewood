@@ -42,7 +42,7 @@ public class UserService : IUserService
         return principal;
     }
 
-    public async Task SignIn(UserCreateRequest dto)
+    public async Task SignUp(UserCreateRequest dto)
     {
         if (_repo.IsEmailTaken(dto.Email))
             throw new BadRequestException("email is already in use");
